@@ -1,8 +1,54 @@
-header{
-	height: 7vh;
-	padding: 15px 0;
-	background: #222;
-	a {
-		color: #fff;
-	}
+header {
+    background: #222222d4;
+
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        display: inline-block;
+        width: 56px;
+        margin-right: 24px;
+
+        svg {
+            fill: #fff;
+
+            &:hover {
+                fill: $secondary-color;
+                transition: $transition4s;
+            }
+        }
+    }
+
+
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    text-transform: uppercase;
+    transition: $transition4s;
+    
+    &.show {
+        display: flex;
+    }
+
+    a {
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        padding: 6px 12px;
+        transition: $transition4s;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}
+
+
+.btn-burger {
+    margin-left: auto;
 }
