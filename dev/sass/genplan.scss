@@ -1,7 +1,22 @@
-.genplan {
+.genplan,
+.build {
     max-height: calc(100vh - $header-height);
     overflow: hidden;
     position: relative;
+}
+
+
+.booking {
+	.build-path {
+		fill: #ff5050;
+		fill-opacity: 0;
+		stroke: #f80000;
+		cursor: no-drop;
+
+        &:hover {
+            fill-opacity: 0.4;
+        }
+	}
 }
 
 .build-path {

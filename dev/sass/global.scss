@@ -55,10 +55,15 @@ img,svg {
     height: auto;
 }
 
-.container {
+.container,
+.container-xl {
     max-width: 1350px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.container-xl {
+    max-width: 1700px;
 }

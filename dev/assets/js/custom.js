@@ -1,3 +1,12 @@
+// Burger-Menu 
+const headerNav = document.querySelector('.header-nav');
+const btnBurger = document.querySelector('.hamburger');
+
+btnBurger.addEventListener('click', () => {
+    headerNav.classList.toggle('show');
+    btnBurger.classList.toggle('is-active');
+})
+
 const installGenplan = () => {
     const address = document.querySelector('#address');
     const floor = document.querySelector('#floor');
@@ -14,17 +23,27 @@ const installGenplan = () => {
             floor.innerHTML = buildFloor;
             flat.innerHTML = buildFlat;
         })
+
     })
+
+    const addBooking = (builds) => builds.forEach(build => {
+        const buildLink = build.closest('a')
+        const flatQuantity = +build.getAttribute('data-flat-quantity')
+        flatQuantity ? flatQuantity >= 0 : buildLink.classList.add('booking')
+
+        buildLink.addEventListener('click', (event)=> {
+            if (buildLink.classList.contains('booking')) {
+                event.preventDefault()
+            }
+        })
+    })
+
+    addBooking(builds)
+}
+
+const installFloor = () => {
+    console.log('installFloor');
 }
 
 document.querySelector('.genplan') ? installGenplan() : null;
-
-
-// Burger-Menu 
-const headerNav = document.querySelector('.header-nav');
-const btnBurger = document.querySelector('.hamburger');
-
-btnBurger.addEventListener('click', () => {
-    headerNav.classList.toggle('show');
-    btnBurger.classList.toggle('is-active');
-})
+document.querySelector('.floor-plan') ? installFloor() : null
